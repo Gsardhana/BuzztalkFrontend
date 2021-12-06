@@ -1,0 +1,15 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="container">
+    <h3> India's Top Headline </h3>
+    <div class="row">
+        <div *ngFor="let d of technewsDisplay" class="col-lg-3">
+             <div class="box">
+                  <img src="{{d.urlToImage}}" width="100%">
+                  <h5 class="mt-2 mb-2">{{d.title}}</h5>
+                  <p>{{d.content}}</p>
+                  <a href="{{d.url}}" target='_blank' class= "btn btn-dark btn-sm">Read More</a>
+             </div>
+        
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="card" style="width: 40rem; border-radius:20px;margin-left: 300px; margin-top: 20px;">
+
+    <div class="card-body" style="background-color: hotpink;">
+  
+      <h5 class="card-title">Add Your Post!...</h5>
+      <div class="jumbotron" style="padding-bottom: 20px; ">
+        <form [formGroup]="contentForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <input type="text" formControlName="content" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.content.errors }" style="height: 200px; width: 500px;" />
+              <div *ngIf="submitted && f.content.errors" class="invalid-feedback">
+                <div *ngIf="f.content.errors.required">content is required</div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary mr-1">post</button>
+              <button class="btn btn-secondary" type="reset" (click)="onReset()">Delete</button>
+              <a class="btn btn-primary btn-lg1" href="#" role="submit"
+              style="margin-left: 10px; margin-right: 10px;">comment</a>
+              <a class="btn btn-primary btn-lg1" href="#" role="submit">Like</a>
+            </div>
+        </form>
+        <!-- <input type="text"  placeholder="Share your thought.....!!!" style="padding-block-start: 20px;padding-bottom: 30px; width:450px" required/> -->
+      </div>
+       
+    </div>
+  </div>
+  
+  
+  <div class="jumbotron" style="border-radius: 20px; margin-left: 300px;  margin-right: 320px;margin-top:20px;">
+    <h5 class="card-title"></h5>
+    <img [src]="image" style="height: 500px;width: 550px;">
+    <hr class="my-3">
+  
+  
+    <!-- <input  id='fileid' type='file' (change)="onFileChanged($event)" hidden/> -->
+    <input id='buttonid' class="btn btn-primary btn-lg1" type='file' value='Add Photo' (change)="onFileChanged($event)"
+      required>
+    <!--  <a class="btn btn-primary btn-lg1" href="#" role="button"  (click)='AddImages()' style="margin-left: 10px;">Add Photo</a>-->
+    <a class="btn btn-primary btn-lg1" href="#" role="button" style="margin-left: 10px; margin-right: 10px;">comment</a>
+    <a class="btn btn-primary btn-lg1" href="#" role="button" style="margin-top: 3px;">like</a>
+    <a class="btn btn-primary btn-lg1" href="#" role="button"
+      style="margin-left: 10px; margin-right: 10px; margin-top: 10px;">Delete Photo</a>
+  
+  
+  
+  </div>
