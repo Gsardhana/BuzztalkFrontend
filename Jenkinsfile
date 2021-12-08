@@ -16,21 +16,9 @@ steps{
 bat 'npm run-script build'
 }
 }
-stage('Build Image'){
+stage('deploy'){
 steps{
-bat 'docker build -t image2:v1 .'
-}
-}
-stage('Create Container')
-{
-steps{
-bat 'docker container create -p 4200:4200 --name container2 image2:v1'
-}
-}
-stage('Start Container')
-{
-steps{
-bat 'docker start container2'
+bat 'npm restart all'
 }
 }
 }
